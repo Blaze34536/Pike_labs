@@ -9,6 +9,8 @@ header{
     display:flex;
     flex-wrap:wrap;
     justify-content:space-between;
+    background-color:#202c39;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     align-items:center;
     z-index:99;
 }
@@ -38,8 +40,7 @@ header{
     align-items: center;
     justify-content: center;
     border-bottom: 5px solid black;
-    background: rgb(191,224,215);   
-    background: radial-gradient(circle, rgba(191,224,215,1) 0%, rgba(141,203,188,1) 100%);
+    background-color: #e1e5ee;
     flex-direction: column;
 }
 .typewriter h1{ 
