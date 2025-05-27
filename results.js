@@ -97,7 +97,7 @@ submitButton.addEventListener("click", function (event) {
     resultDisplay.innerHTML = allYearCostBreakDown;
 });
 
-collegeNameElement = document.getElementById('college-name');
+collegeNameElement = document.getElementById('college-heading');
 collegeNameElement.innerHTML = `<p>${collegeName}<p>`;
 
 
