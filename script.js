@@ -1,4 +1,4 @@
-// script.js
+
 document.addEventListener("DOMContentLoaded", function () {
   const chatbotContainer = document.getElementById("chatbot-container");
   const closeBtn = document.getElementById("close-btn");
