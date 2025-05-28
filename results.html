@@ -287,9 +287,6 @@
   <div class="fullpage-parallax">
     <div class="parallax-content">
       <h1 class="main-heading" id="college-heading">Loading college name...</h1>
-      <h2>Your University Search Starts Here</h2>
-      <p>Discover the perfect college that matches your dreams and ambitions</p>
-      <button class="btn btn-warning btn-lg">Explore Now</button>
     </div>
     <div class="scroll-down-arrow" onclick="scrollToContent()">↓</div>
   </div>
@@ -423,5 +420,22 @@
       document.getElementById('chatbot-container').classList.remove('active');
     });
   </script>
+  <style>
+    .fullpage-parallax{
+  height: 100vh;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  position: relative;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://www.ox.ac.uk/sites/files/oxford/styles/ow_large_feature/s3/field/field_image_main/Elizabeth%20Nyikos%2C%20Duke%20Humfreys%20%28cropped%29.jpg?itok=K5UXGRTX');
+    }
+</style>
 </body>
 </html>
