@@ -148,74 +148,7 @@
     observer.observe(typewriter);
   });
 </script>
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-  const chatbotContainer = document.getElementById("chatbot-container");
-  const closeBtn = document.getElementById("close-btn");
-  const sendBtn = document.getElementById("send-btn");
-  const chatbotInput = document.getElementById("chatbot-input");
-  const chatbotMessages = document.getElementById("chatbot-messages");
-  const chatbotIcon = document.getElementById("chatbot-icon");
 
-  chatbotIcon.addEventListener("click", function () {
-    chatbotContainer.style.display = "block";
-    chatbotIcon.style.display = "none";
-  });
-
-  closeBtn.addEventListener("click", function () {
-    chatbotContainer.style.display = "none";
-    chatbotIcon.style.display = "inline-block";
-  });
-
-  sendBtn.addEventListener("click", sendMessage);
-  chatbotInput.addEventListener("keypress", function (e) {
-    if (e.key === "Enter") sendMessage();
-  });
-
-  function appendMessage(sender, message) {
-    const messageElement = document.createElement("div");
-    messageElement.classList.add("message", sender);
-    messageElement.textContent = message;
-    chatbotMessages.appendChild(messageElement);
-    chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
-  }
-
-  async function getBotResponse(userMessage) {
-    const apiKey = "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"; // <-- Your key here
-
-    try {
-      const response = await fetch("https://api.openai.com/v1/chat/completions", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${apiKey}`,
-        },
-        body: JSON.stringify({
-          model: "gpt-3.5-turbo",
-          messages: [{ role: "user", content: userMessage }],
-          max_tokens: 150,
-        }),
-      });
-
-      const data = await response.json();
-      const botMessage = data.choices?.[0]?.message?.content || "No response.";
-      appendMessage("bot", botMessage);
-    } catch (error) {
-      console.error("Error:", error);
-      appendMessage("bot", "Error contacting the AI. Check console.");
-    }
-  }
-
-  function sendMessage() {
-    const userMessage = chatbotInput.value.trim();
-    if (userMessage) {
-      appendMessage("user", userMessage);
-      chatbotInput.value = "";
-      getBotResponse(userMessage);
-    }
-  }
-});
-</script>
 
 
 </body>
