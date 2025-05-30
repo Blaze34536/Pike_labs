@@ -42,10 +42,10 @@ document.addEventListener("DOMContentLoaded", function () {
     messageElement.textContent = message;
     chatbotMessages.appendChild(messageElement);
     chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
-  }
+  }require('dotenv').config();
 
   async function getBotResponse(userMessage) {
-    const apiKey = ProcessingInstruction.env.OPENAI_API_KEY || "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";  // our stuff
+    const apiKey =  "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";  // our stuff
     const apiUrl = "https://api.openai.com/v1/chat/completions"; //our stuff
 
     try {
