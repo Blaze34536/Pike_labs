@@ -109,7 +109,7 @@ document.addEventListener("DOMContentLoaded", function () {
         iconAnchor: [12, 41],
         popupAnchor: [1, -34],
         shadowSize: [41, 41]
-      });
+    });
     if (lats && longs) {
         var map = L.map('map', {
             minZoom: 3,
@@ -133,7 +133,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     const name = feature.properties.name || 'Place';
                     const formattedAddress = feature.properties.formatted;
     
-               
+            
                     if (typeof L !== 'undefined' && map) {
                         L.marker([lattt, lontt], {icon: greenIcon})
                         .addTo(map)

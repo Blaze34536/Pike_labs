@@ -31,6 +31,7 @@ header{
 }
 .navigation a:hover{
     background-color:white;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
     
 }    
 
@@ -79,6 +80,7 @@ header{
 }
 .search:hover{
     background-color:white;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
 .result-box ul{
     border-top:1px solid #999;
@@ -94,6 +96,7 @@ header{
 }
 .result-box p:hover{
     background: #B5EFD1;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
 
 @keyframes typing{
@@ -153,6 +156,7 @@ header{
 #chatbot-icon:hover {
   background-color: #f29559;
   transform: scale(1.1);
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
 
 
@@ -258,6 +262,7 @@ header{
 
 #send-btn:hover {
   background-color:  #f29559;
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
 .title{
     padding-top:10px;
@@ -300,8 +305,8 @@ header{
     color: #f2d492;
     font-family: 'Allan', cursive;
     padding-top: 20px;
-    animation: slideFadeIn 0.6s ease forwards;
-    z-index: 1050; 
+    animation: slideFadeIn 2s ease forwards;
+    z-index: 2000; 
     position: fixed;
     top: 0;
     right: 0;
@@ -354,6 +359,13 @@ header{
     animation-delay: calc(var(--i) * 0.1s);
     margin-bottom: 15px;
 }
+.menu-links li:hover {
+    transform: translateX(10px);
+    transition: transform 0.3s ease;
+    color: #283845;
+    font-weight: bold;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
 
 .menu-links li a {
     text-decoration: none;
@@ -363,8 +375,9 @@ header{
 }
 
 .menu-links li a:hover {
-    color: #ffffff;
+    color: #283845;;
     letter-spacing: 1px;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
 
 
@@ -396,6 +409,7 @@ header{
 
 .offcanvas .btn-outline-light:hover {
     background-color: #f2d492;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
     color: #283845;
 }
 .fullpage-parallax {

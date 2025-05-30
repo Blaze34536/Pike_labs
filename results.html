@@ -15,259 +15,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Allan:wght@400;700&family=Audiowide&display=swap" rel="stylesheet"/>
   
-  <style>
-    
-    body {
-      font-family: 'Allan', sans-serif;
-      margin: 0;
-      padding: 0;
-      overflow-x: hidden;
-    }
-    
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem 2rem;
-      position: fixed;
-      width: 100%;
-      z-index: 1000;
-      background-color: rgba(0, 0, 0, 0.7);
-      color: white;
-    }
-    
-    .title {
-      font-family: 'Audiowide', cursive;
-      margin: 0;
-    }
-    
-    .fullpage-parallax {
-      height: 100vh;
-      background-attachment: fixed;
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: cover;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      color: white;
-      position: relative;
-      background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
-    }
-    
-    .parallax-content {
-      z-index: 1;
-    }
-    
-    .scroll-down-arrow {
-      position: absolute;
-      bottom: 20px;
-      left: 50%;
-      transform: translateX(-50%);
-      font-size: 2rem;
-      cursor: pointer;
-      animation: bounce 2s infinite;
-    }
-    
-    @keyframes bounce {
-      0%, 20%, 50%, 80%, 100% {transform: translateY(0) translateX(-50%);}
-      40% {transform: translateY(-20px) translateX(-50%);}
-      60% {transform: translateY(-10px) translateX(-50%);}
-    }
-    
-    .main-content {
-      padding: 2rem;
-      background-color: #f8f9fa;
-    }
-    
-    .container {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 2rem;
-      margin-top: 2rem;
-    }
-    
-    .map {
-      flex: 1;
-      min-width: 400px;
-      height: 700px;
-      background-color: #ddd;
-      border-radius: 8px;
-    }
-    
-    .buttons {
-      flex: 1;
-      min-width: 300px;
-    }
-    
-    .result2 {
-      flex: 1;
-      min-width: 300px;
-      background-color: white;
-      padding: 1rem;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-    
-    form {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-    }
-    
-    input, button {
-      padding: 0.5rem;
-      border-radius: 4px;
-      border: 1px solid #ddd;
-    }
-    
-    button.submit {
-      background-color: #007bff;
-      color: white;
-      border: none;
-      cursor: pointer;
-    }
-    
-    .typewriter {
-      text-align: center;
-      margin-bottom: 2rem;
-    }
-    
-    .result-heading {
-      color: #333;
-      margin-bottom: 1rem;
-    }
-    
-    #chatbot-icon {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background-color: #007bff;
-      color: white;
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-size: 1.5rem;
-      cursor: pointer;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-      z-index: 1000;
-    }
-    
-    #chatbot-container {
-      position: fixed;
-      bottom: 80px;
-      right: 20px;
-      width: 300px;
-      background-color: white;
-      border-radius: 8px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-      display: none;
-      flex-direction: column;
-      z-index: 1000;
-    }
-    
-    #chatbot-container.active {
-      display: flex;
-    }
-    
-    #chatbot-header {
-      padding: 0.5rem 1rem;
-      background-color: #007bff;
-      color: white;
-      border-top-left-radius: 8px;
-      border-top-right-radius: 8px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    
-    #close-btn {
-      background: none;
-      border: none;
-      color: white;
-      font-size: 1.2rem;
-      cursor: pointer;
-    }
-    
-    #chatbot-body {
-      padding: 1rem;
-      height: 300px;
-      overflow-y: auto;
-    }
-    
-    #chatbot-input-container {
-      display: flex;
-      padding: 0.5rem;
-      border-top: 1px solid #ddd;
-    }
-    
-    #chatbot-input {
-      flex: 1;
-      padding: 0.5rem;
-      border: 1px solid #ddd;
-      border-radius: 4px;
-    }
-    
-    #send-btn {
-      margin-left: 0.5rem;
-      background-color: #007bff;
-      color: white;
-      border: none;
-      border-radius: 4px;
-      padding: 0 1rem;
-      cursor: pointer;
-    }
-    
-    
-    .fade-in {
-      opacity: 0;
-      animation: fadeIn 1s forwards;
-    }
-    
-    .slide-in-left {
-      opacity: 0;
-      transform: translateX(-20px);
-      animation: slideInLeft 0.5s forwards;
-    }
-    
-    .slide-in-right {
-      opacity: 0;
-      transform: translateX(20px);
-      animation: slideInRight 0.5s forwards;
-    }
-    
-    .delay-2 {
-      animation-delay: 0.2s;
-    }
-    
-    @keyframes fadeIn {
-      to { opacity: 1; }
-    }
-    
-    @keyframes slideInLeft {
-      to { opacity: 1; transform: translateX(0); }
-    }
-    
-    @keyframes slideInRight {
-      to { opacity: 1; transform: translateX(0); }
-    }
-    
-    /* Responsive adjustments */
-    @media (max-width: 768px) {
-      .container {
-        flex-direction: column;
-      }
-      
-      .map, .buttons, .result2 {
-        width: 100%;
-      }
-    }
-  </style>
+
 </head>
 <body>
 
@@ -285,7 +33,7 @@
 
   <!-- Full-page Parallax Hero Section with College Name -->
   <div class="fullpage-parallax">
-    <div class="parallax-content">
+    <div class="parallax-content slide-in-right">
       <h1 class="main-heading" id="college-heading">Loading college name...</h1>
     </div>
     <div class="scroll-down-arrow" onclick="scrollToContent()">↓</div>
@@ -344,7 +92,7 @@
           </form>
         </div>
 
-        <div class="result2 fade-in delay-2">
+        <div class="result2 slide-in-right">
           <h1 class="result-heading">Results</h1>
           <div id="result-display"></div>
         </div>
@@ -437,5 +185,29 @@
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://www.ox.ac.uk/sites/files/oxford/styles/ow_large_feature/s3/field/field_image_main/Elizabeth%20Nyikos%2C%20Duke%20Humfreys%20%28cropped%29.jpg?itok=K5UXGRTX');
     }
 </style>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Select all elements with animation classes
+  const animatedElements = document.querySelectorAll('.slide-in-left, .slide-in-right');
+
+  // Create an Intersection Observer
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('active'); // Trigger animation
+      }
+    });
+  }, {
+    threshold: 0.1, // Trigger when 10% of the element is visible
+  });
+
+  // Observe each animated element
+  animatedElements.forEach(element => {
+    observer.observe(element);
+  });
+});
+
+
+</script>
 </body>
 </html>
